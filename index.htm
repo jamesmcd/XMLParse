@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <title>TV Guide</title>
+   <link rel="stylesheet" href="./main.css" />
+   <script src="jquery-1.11.1.min.js"></script>
+   
+</head>
+<body>
+   
+	
+<div id = "content">
+
+</div>	
+	
+	
+<script>
+	var listings = new Array(); 
+	var channel = [];
+	var shows = new Array();
+	var day;
+	
+	
+	$(document).ready(function(){
+
+		function parse(document){
+			
+			  $(document).find('day[name="Tuesday"]').each(function(){
+				  
+				  $(this).find('channel').each(function(){
+				  shows = [];
+				  var ch = $(this).attr('name');
+					  $(this).find('channel[name="'+ch+'"] > show').each(function() {
+						shows.push($(this).attr('name'));
+					  });
+					  channel.push(ch,shows);
+				  
+				  });
+			  });
+			  $("#content").append('<p>' + channel + '</p>' );
+					
+			}
+
+			  $.ajax({
+				url: './test.xml', // name of file you want to parse
+				dataType: "xml",
+				success: parse,
+				error: function(){alert("Unable to open file");}
+			  });
+		
+	});
+	
+	 
+</script>
+<script>
+
+</script>
+</body>
+</html>

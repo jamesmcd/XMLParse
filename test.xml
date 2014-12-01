@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<week>
+	<day id = "1" name="Monday">
+		<channel id = "1" name = "RTE 1">
+			<show name = "Rugrats" />
+			<show name = "Barney"/>
+		</channel>
+	</day>
+	<day id = "2" name="Tuesday">
+		<channel id = "2" name = "BBC 1">
+			<show name = "The One Show" />
+		</channel>
+		<channel id = "3" name = "BBC 2">
+			<show name = "Night Rider" />
+		</channel>
+	</day>
+</week>
